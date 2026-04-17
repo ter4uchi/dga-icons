@@ -1,0 +1,45 @@
+{
+  "name": "@ter4uchi/dga-icons",
+  "version": "0.1.0",
+  "description": "Digital Agency icons as framework-agnostic Web Components",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./vscode.html-custom-data.json": "./types/vscode.html-custom-data.json"
+  },
+  "scripts": {
+    "build:icons": "tsx scripts/build-icons.ts",
+    "build:bundle": "tsup",
+    "build": "npm run build:icons && npm run build:bundle",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "digital-agency",
+    "dga",
+    "icons",
+    "web-components",
+    "custom-elements"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "happy-dom": "^20.9.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "vitest": "^4.1.4"
+  }
+}

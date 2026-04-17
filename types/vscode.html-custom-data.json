@@ -1,0 +1,223 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "dga-icon",
+      "description": "Digital Agency icon Web Component. Switch icons via the `name` attribute.",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "Icon name.",
+          "values": [
+            {
+              "name": "add"
+            },
+            {
+              "name": "application"
+            },
+            {
+              "name": "arrival"
+            },
+            {
+              "name": "arrow_down"
+            },
+            {
+              "name": "arrow_left"
+            },
+            {
+              "name": "arrow_right"
+            },
+            {
+              "name": "arrow_up"
+            },
+            {
+              "name": "attention"
+            },
+            {
+              "name": "authentication"
+            },
+            {
+              "name": "bank_account"
+            },
+            {
+              "name": "certification"
+            },
+            {
+              "name": "certification_with_seal"
+            },
+            {
+              "name": "child"
+            },
+            {
+              "name": "code_reader"
+            },
+            {
+              "name": "complete"
+            },
+            {
+              "name": "copy"
+            },
+            {
+              "name": "departure"
+            },
+            {
+              "name": "documents"
+            },
+            {
+              "name": "download"
+            },
+            {
+              "name": "e_application"
+            },
+            {
+              "name": "expenditure"
+            },
+            {
+              "name": "family"
+            },
+            {
+              "name": "fast_track"
+            },
+            {
+              "name": "fillable_card"
+            },
+            {
+              "name": "health"
+            },
+            {
+              "name": "help"
+            },
+            {
+              "name": "history"
+            },
+            {
+              "name": "house"
+            },
+            {
+              "name": "immunization"
+            },
+            {
+              "name": "inbox"
+            },
+            {
+              "name": "income"
+            },
+            {
+              "name": "information"
+            },
+            {
+              "name": "invoice"
+            },
+            {
+              "name": "itinerary"
+            },
+            {
+              "name": "laws"
+            },
+            {
+              "name": "luggage"
+            },
+            {
+              "name": "mailing"
+            },
+            {
+              "name": "me"
+            },
+            {
+              "name": "medicine"
+            },
+            {
+              "name": "menu"
+            },
+            {
+              "name": "money"
+            },
+            {
+              "name": "mother_and_child"
+            },
+            {
+              "name": "municipality"
+            },
+            {
+              "name": "new_window"
+            },
+            {
+              "name": "notification"
+            },
+            {
+              "name": "password"
+            },
+            {
+              "name": "pension"
+            },
+            {
+              "name": "personal_computer"
+            },
+            {
+              "name": "printer"
+            },
+            {
+              "name": "privacy_protection"
+            },
+            {
+              "name": "public_offering"
+            },
+            {
+              "name": "seal_certificate"
+            },
+            {
+              "name": "search"
+            },
+            {
+              "name": "smartphone"
+            },
+            {
+              "name": "specialist"
+            },
+            {
+              "name": "stamp"
+            },
+            {
+              "name": "tax"
+            },
+            {
+              "name": "transactions"
+            },
+            {
+              "name": "update"
+            },
+            {
+              "name": "work"
+            }
+          ]
+        },
+        {
+          "name": "variant",
+          "description": "Icon style variant.",
+          "values": [
+            {
+              "name": "fill"
+            },
+            {
+              "name": "line"
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "CSS length or unitless pixel value. Default: 24."
+        },
+        {
+          "name": "color",
+          "description": "CSS color. Default: currentColor."
+        }
+      ],
+      "references": [
+        {
+          "name": "Digital Agency design system",
+          "url": "https://design.digital.go.jp/"
+        }
+      ]
+    }
+  ]
+}

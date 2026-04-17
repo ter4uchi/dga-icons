@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ter4uchi/dga-icons demo</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fff;
+        --fg: #1a1a1c;
+        --muted: #666;
+        --border: #e5e5e7;
+        --card-bg: #fafafa;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1a1a1c;
+          --fg: #f2f2f3;
+          --muted: #999;
+          --border: #333;
+          --card-bg: #222;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+      }
+      p.sub {
+        margin: 0 0 2rem;
+        color: var(--muted);
+      }
+      .controls {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        background: var(--card-bg);
+      }
+      .controls label {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        color: var(--muted);
+        gap: 0.25rem;
+      }
+      .controls input,
+      .controls select {
+        font: inherit;
+        padding: 0.4rem 0.6rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.5rem;
+      }
+      .cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card-bg);
+      }
+      .cell code {
+        font-size: 0.7rem;
+        color: var(--muted);
+        word-break: break-all;
+        text-align: center;
+      }
+      .focus-demo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--card-bg);
+      }
+      .focus-demo dga-icon {
+        transition: color 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>@ter4uchi/dga-icons</h1>
+    <p class="sub">
+      Digital Agency icon Web Components &mdash; 60 icons &times; 2 variants.
+    </p>
+
+    <section class="focus-demo">
+      <dga-icon id="focus" name="house" variant="line" size="96"></dga-icon>
+      <div>
+        <div>
+          <strong id="focusLabel">house / line / 96</strong>
+        </div>
+        <div style="color: var(--muted); font-size: 0.85rem">
+          Tap any icon below to focus it here.
+        </div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <label>
+        variant
+        <select id="variant">
+          <option value="line">line</option>
+          <option value="fill">fill</option>
+        </select>
+      </label>
+      <label>
+        size
+        <input id="size" type="number" value="32" min="12" max="128" />
+      </label>
+      <label>
+        color
+        <input id="color" type="color" value="#1a1a1c" />
+      </label>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <script type="module">
+      import { icons } from '../dist/index.js';
+
+      const names = [
+        ...new Set(
+          Object.keys(icons).map((k) => k.replace(/_(fill|line)$/, '')),
+        ),
+      ].sort();
+
+      const grid = document.getElementById('grid');
+      const variantSel = document.getElementById('variant');
+      const sizeInput = document.getElementById('size');
+      const colorInput = document.getElementById('color');
+      const focus = document.getElementById('focus');
+      const focusLabel = document.getElementById('focusLabel');
+
+      for (const name of names) {
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        const icon = document.createElement('dga-icon');
+        icon.setAttribute('name', name);
+        icon.setAttribute('variant', variantSel.value);
+        icon.setAttribute('size', sizeInput.value);
+        icon.style.color = colorInput.value;
+        cell.append(icon, Object.assign(document.createElement('code'), { textContent: name }));
+        cell.addEventListener('click', () => {
+          focus.setAttribute('name', name);
+          focus.setAttribute('variant', variantSel.value);
+          focusLabel.textContent = `${name} / ${variantSel.value} / ${sizeInput.value}`;
+        });
+        grid.append(cell);
+      }
+
+      function syncAll() {
+        const variant = variantSel.value;
+        const size = sizeInput.value;
+        const color = colorInput.value;
+        for (const icon of grid.querySelectorAll('dga-icon')) {
+          icon.setAttribute('variant', variant);
+          icon.setAttribute('size', size);
+          icon.style.color = color;
+        }
+        focus.setAttribute('variant', variant);
+        focus.style.color = color;
+        focusLabel.textContent = `${focus.getAttribute('name')} / ${variant} / ${size}`;
+      }
+
+      variantSel.addEventListener('change', syncAll);
+      sizeInput.addEventListener('input', syncAll);
+      colorInput.addEventListener('input', syncAll);
+    </script>
+  </body>
+</html>
