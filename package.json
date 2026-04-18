@@ -8,7 +8,9 @@
   "types": "./types/index.d.ts",
   "files": [
     "dist",
-    "types"
+    "types",
+    "LICENSE",
+    "LICENSE-ICONS"
   ],
   "exports": {
     ".": {
@@ -33,7 +35,16 @@
     "web-components",
     "custom-elements"
   ],
-  "license": "MIT",
+  "author": "ter4uchi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ter4uchi/dga-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ter4uchi/dga-icons/issues"
+  },
+  "homepage": "https://github.com/ter4uchi/dga-icons#readme",
+  "license": "(MIT AND CC-BY-4.0)",
   "devDependencies": {
     "@types/node": "^20.11.0",
     "happy-dom": "^20.9.0",
