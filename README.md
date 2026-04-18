@@ -181,19 +181,11 @@ export class AppModule {}
 
 ## ライセンス
 
-このパッケージは 2 種類のライセンスを含みます。
-
-### コード（`src/`, `scripts/`, `types/`, `tests/`, および `dist/` のうち SVG 文字列以外）
-
-[MIT License](./LICENSE)
-
-### アイコン素材（`svg/` および `dist/` に埋め込まれた SVG 文字列）
-
-[「イラストレーション・アイコン素材」](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons)（デジタル庁）を加工して利用しています。
+本パッケージは、コード・アイコン素材ともに [「イラストレーション・アイコン素材」](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons)（デジタル庁）に準拠して配布します。
 
 - 原典ライセンス：[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - 配布規約：[イラストレーション・アイコン素材利用規約](https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons/terms_of_use)（デジタル庁）
 
 原典 SVG に対し、`fill="#1A1A1C"` を `fill="currentColor"` に置換、ルート `<svg>` の `width` / `height` 属性を除去、JavaScript 文字列としてバンドルへ埋め込む処理を行っています。アイコンのパスデータ（`<path d="...">`）は変更していません。
 
-詳細は [LICENSE-ICONS](./LICENSE-ICONS) を参照してください。デジタル庁が作成したかのような表示で利用しないようご注意ください。
+詳細は [LICENSE](./LICENSE) を参照してください。デジタル庁が作成したかのような表示で利用しないようご注意ください。

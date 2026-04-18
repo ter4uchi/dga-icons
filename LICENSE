@@ -1,31 +1,67 @@
-MIT License
+License
+=======
 
-Copyright (c) 2026 ter4uchi
+This package — both its source code and its bundled SVG icon assets — is
+distributed under the terms of the Digital Agency of Japan's
+"Illustration & Icon Materials Terms of Use", which is based on the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+The icon assets are derived from the Digital Agency's
+"Illustration & Icon Materials" (デジタル庁 イラストレーション・アイコン素材).
+The surrounding code (Web Component implementation, build scripts, type
+declarations, and tests) is provided under the same terms so that the
+package as a whole can be used in accordance with the source materials'
+license.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Source of icon assets
+---------------------
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+  https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons
 
----
+Original license (icon assets)
+------------------------------
 
-Note: The MIT license above applies only to the source code of this package
-(everything under src/, scripts/, types/, tests/, and the resulting bundles
-under dist/ except for the embedded SVG strings).
+  Creative Commons Attribution 4.0 International (CC BY 4.0)
+  https://creativecommons.org/licenses/by/4.0/
 
-The bundled SVG icon assets are derived from third-party material distributed
-by the Digital Agency of Japan (デジタル庁). Their license, terms of use, and
-attribution requirements are documented in LICENSE-ICONS.
+Governing terms of use
+----------------------
+
+  Digital Agency "Illustration & Icon Materials Terms of Use"
+  https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons/terms_of_use
+
+Key points (informal summary; the linked terms are authoritative):
+
+  - Commercial use is permitted.
+  - Reproduction, public transmission, translation, and adaptation are
+    permitted.
+  - When materials are used as-is, credit attribution is not required.
+  - When materials are edited or adapted and then redistributed, the
+    source must be cited and the fact that they were modified must be
+    indicated.
+  - Materials must not be presented in a manner that suggests they were
+    created by the national government of Japan.
+
+Modifications applied to the icon assets in this package
+--------------------------------------------------------
+
+The original SVG files were transformed by `scripts/build-icons.ts` before
+being embedded into the bundle:
+
+  - `fill="#1A1A1C"` was replaced with `fill="currentColor"` so that the
+    icon color follows the host element's CSS `color` property.
+  - The `width` and `height` attributes on the root `<svg>` element were
+    removed so the icon size is controlled via CSS.
+  - The XML prolog, comments, and inter-tag whitespace were stripped, and
+    each SVG was inlined as a JavaScript string for runtime injection
+    into the Shadow DOM of the `<dga-icon>` Web Component.
+
+No changes were made to the icon path data (`<path d="...">`).
+
+Disclaimer
+----------
+
+This package is **not** an official Digital Agency product. It is a
+third-party redistribution of the icon assets in Web Component form,
+maintained independently. Issues with this package should be reported to
+this repository, not to the Digital Agency.
