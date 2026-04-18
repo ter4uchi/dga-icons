@@ -1,6 +1,6 @@
 {
   "name": "@ter4uchi/dga-icons",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Digital Agency icons as framework-agnostic Web Components",
   "type": "module",
   "main": "./dist/index.cjs",
