@@ -10,6 +10,10 @@
 - React 18 / React 19+ / Vue 3 / Svelte 5 / VSCode の補完に対応
 - ESM + CJS 同梱
 
+## デモ
+
+[https://ter4uchi.github.io/dga-icons/](https://ter4uchi.github.io/dga-icons/)
+
 ## インストール
 
 ```bash
